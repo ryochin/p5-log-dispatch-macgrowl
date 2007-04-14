@@ -1,0 +1,68 @@
+NAME
+    Log::Dispatch::MacGrowl - for notifying to Growl
+
+SYNOPSIS
+     use Log::Dispatch::MacGrowl;
+
+     my $growl = Log::Dispatch::MacGrowl->new(
+        name => 'growl',
+        min_level => 'debug',
+
+        app_name => 'Log::Dispatch',
+        title => 'Hey!',
+        priority => 0,
+        sticky => 1,
+        icon_file => '/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertCautionIcon.icns',
+     );
+
+     $growl->log( level => 'alert', message => "I'm searching the city for sci-fi wasabi\n" );
+
+DESCRIPTION
+    blah
+
+METHODS
+    * new(%p)
+        This method takes a hash of parameters. The following options are
+        acceptable.
+
+        * name ($)
+                The name of the object. Required.
+
+        * min_level ($)
+                The minimum logging level this object will accept. See the
+                Log::Dispatch documentation for more information. Required.
+
+        * max_level ($)
+                The maximum logging level this obejct will accept. See the
+                Log::Dispatch documentation for more information. This is
+                not required. By default the maximum is the highest possible
+                level (which means functionally that the object has no
+                maximum).
+
+        * app_name ($)
+                The Application Name registered to Growl. By default, the
+                package name will be registered.
+
+        * priority ($)
+                The priority number (range from -2 for low to 2 for high)
+                passed to Growl. By default, 0 (normal) will be passed.
+
+        * sticky ($)
+                The Stickiness (boolean) passed to Growl. By default, 1
+                (sticky) will be passed.
+
+        * icon_file ($)
+                The icon file (.icns) path shown on each notification
+                window. By default, nothing will be passed.
+
+    * log_message( message => $ )
+        Sends a message to the appropriate output. Generally this shouldn't
+        be called directly but should be called through the "log()" method
+        (in Log::Dispatch::Output).
+
+DEPENDENCY
+        Log::Dispatch, Mac::Growl
+
+AUTHOR
+        Ryo Okamoto <ryo at aquahill dot net>
+
