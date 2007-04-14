@@ -1,5 +1,5 @@
 #
-# $Id: Void.pm 9 2006-07-07 02:26:41Z ryo $
+# $Id$
 #
 
 package Log::Dispatch::MacGrowl;
