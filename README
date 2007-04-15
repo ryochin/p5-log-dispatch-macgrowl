@@ -1,5 +1,5 @@
 NAME
-    Log::Dispatch::MacGrowl - for notifying to Growl
+    Log::Dispatch::MacGrowl - Log messages via Growl
 
 SYNOPSIS
      use Log::Dispatch::MacGrowl;
@@ -7,18 +7,17 @@ SYNOPSIS
      my $growl = Log::Dispatch::MacGrowl->new(
         name => 'growl',
         min_level => 'debug',
-
-        app_name => 'Log::Dispatch',
-        title => 'Hey!',
+        app_name => 'MyApp',
+        title => 'essential info !',
         priority => 0,
         sticky => 1,
         icon_file => '/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertCautionIcon.icns',
      );
 
-     $growl->log( level => 'alert', message => "I'm searching the city for sci-fi wasabi\n" );
+     $growl->log( level => 'alert', message => "Hello, Again." );
 
 DESCRIPTION
-    blah
+    This module allows you to pass messages to Growl using Mac::Growl.
 
 METHODS
     * new(%p)
@@ -40,16 +39,20 @@ METHODS
                 maximum).
 
         * app_name ($)
-                The Application Name registered to Growl. By default, the
-                package name will be registered.
+                The application name registered to Growl. By default, the
+                package name (= Log::Dispatch::MacGrowl) will be registered.
+
+        * title ($)
+                The title shown on the notification window. By default, the
+                script name will be displayed.
 
         * priority ($)
                 The priority number (range from -2 for low to 2 for high)
                 passed to Growl. By default, 0 (normal) will be passed.
 
         * sticky ($)
-                The Stickiness (boolean) passed to Growl. By default, 1
-                (sticky) will be passed.
+                The stickiness (boolean value) passed to Growl. By default,
+                1 (sticky) will be passed.
 
         * icon_file ($)
                 The icon file (.icns) path shown on each notification

@@ -1,11 +1,10 @@
 #
 # $Id$
-#
 
 package Log::Dispatch::MacGrowl;
 
 use strict;
-use 5.006;
+use 5.005;
 use vars qw($VERSION);
 use Log::Dispatch::Output;
 use base qw(Log::Dispatch::Output);
@@ -72,15 +71,18 @@ sub log_message {
     my $self = shift;
     my %p = @_;
 
-    Mac::Growl::PostNotification( $self->{app_name}, "New Message", $self->{title}, $p{message}, $self->{sticky}, $self->{priority}, $self->{icon_file}, );
+    Mac::Growl::PostNotification( $self->{app_name}, $self->_notification_name, $self->{title}, $p{message},
+	$self->{sticky}, $self->{priority}, $self->{icon_file} );
 }
 
 sub _set_global {
     my $self = shift;
 
-    my $global = [ "New Message" ];
+    my $global = [ $self->_notification_name ];
     Mac::Growl::RegisterNotifications( $self->{app_name}, $global, $global );
 }
+
+sub _notification_name { "New Message" }
 
 1;
 
@@ -88,7 +90,7 @@ __END__
 
 =head1 NAME
 
-Log::Dispatch::MacGrowl - for notifying to Growl
+Log::Dispatch::MacGrowl - Log messages via Growl
 
 =head1 SYNOPSIS
 
@@ -97,19 +99,18 @@ Log::Dispatch::MacGrowl - for notifying to Growl
  my $growl = Log::Dispatch::MacGrowl->new(
     name => 'growl',
     min_level => 'debug',
-
-    app_name => 'Log::Dispatch',
-    title => 'Hey!',
+    app_name => 'MyApp',
+    title => 'essential info !',
     priority => 0,
     sticky => 1,
     icon_file => '/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertCautionIcon.icns',
  );
 
- $growl->log( level => 'alert', message => "I'm searching the city for sci-fi wasabi\n" );
+ $growl->log( level => 'alert', message => "Hello, Again." );
 
 =head1 DESCRIPTION
 
-blah
+This module allows you to pass messages to Growl using Mac::Growl.
 
 =head1 METHODS
 
@@ -139,8 +140,13 @@ means functionally that the object has no maximum).
 
 =item * app_name ($)
 
-The Application Name registered to Growl.
-By default, the package name will be registered.
+The application name registered to Growl. By default,
+the package name (= Log::Dispatch::MacGrowl) will be registered.
+
+=item * title ($)
+
+The title shown on the notification window.
+By default, the script name will be displayed.
 
 =item * priority ($)
 
@@ -149,7 +155,7 @@ By default, 0 (normal) will be passed.
 
 =item * sticky ($)
 
-The Stickiness (boolean) passed to Growl.
+The stickiness (boolean value) passed to Growl.
 By default, 1 (sticky) will be passed.
 
 =item * icon_file ($)
