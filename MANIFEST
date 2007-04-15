@@ -8,4 +8,3 @@ t/02_prepare.t
 t/03_log.t
 t/98_perl-critic.t
 t/99_pod-coverage.t
-

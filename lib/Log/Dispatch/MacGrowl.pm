@@ -13,7 +13,7 @@ use Mac::Growl;
 use Params::Validate qw(validate SCALAR BOOLEAN);
 Params::Validate::validation_options( allow_extra => 1 );
 
-$VERSION = '0.01';
+$VERSION = '0.01_01';
 
 sub new {
     my $param = shift;
