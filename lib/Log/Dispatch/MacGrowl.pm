@@ -120,6 +120,8 @@ This module allows you to pass messages to Growl using Mac::Growl.
 
 This method takes a hash of parameters.  The following options are acceptable.
 
+=back
+
 =over 8
 
 =item * name ($)
@@ -165,11 +167,15 @@ By default, nothing will be passed.
 
 =back
 
+=over
+
 =item * log_message( message => $ )
 
 Sends a message to the appropriate output. Generally this shouldn't
 be called directly but should be called through the C<log()> method
 (in Log::Dispatch::Output).
+
+=back
 
 =head1 DEPENDENCY
 
@@ -177,5 +183,12 @@ Log::Dispatch, Mac::Growl
 
 =head1 AUTHOR
 
-Ryo Okamoto <ryo at aquahill dot net>
+Ryo Okamoto C<< <ryo at aquahill dot net> >>
+
+=head1 COPYRIGHT & LICENSE
+
+Copyright 2007-2008 Ryo Okamoto, all rights reserved.
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
 
