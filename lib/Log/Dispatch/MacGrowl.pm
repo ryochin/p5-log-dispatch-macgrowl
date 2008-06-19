@@ -6,7 +6,6 @@ package Log::Dispatch::MacGrowl;
 use strict;
 use 5.005;
 use vars qw($VERSION);
-use Log::Dispatch::Output;
 use base qw(Log::Dispatch::Output);
 use File::Basename ();
 use Mac::Growl;
@@ -135,7 +134,7 @@ Log::Dispatch documentation for more information. Required.
 
 =item * max_level ($)
 
-The maximum logging level this obejct will accept. See the
+The maximum logging level this object will accept. See the
 Log::Dispatch documentation for more information. This is not
 required. By default the maximum is the highest possible level (which
 means functionally that the object has no maximum).

@@ -1,6 +1,8 @@
 Build.PL
 Changes
 MANIFEST
+Makefile.PL
+META.yml
 README
 lib/Log/Dispatch/MacGrowl.pm
 t/01_load.t
@@ -10,3 +12,4 @@ t/95_perl-critic.t
 t/97_pod.t
 t/98_pod-spelling.t
 t/99_pod-coverage.t
+t/perlcriticrc

@@ -1,71 +1,52 @@
-NAME
-    Log::Dispatch::MacGrowl - Log messages via Growl
+Log-Dispatch-MacGrowl
 
-SYNOPSIS
-     use Log::Dispatch::MacGrowl;
+The README is used to introduce the module and provide instructions on
+how to install the module, any machine dependencies it may have (for
+example C compilers and installed libraries) and any other information
+that should be provided before the module is installed.
 
-     my $growl = Log::Dispatch::MacGrowl->new(
-        name => 'growl',
-        min_level => 'debug',
-        app_name => 'MyApp',
-        title => 'essential info !',
-        priority => 0,
-        sticky => 1,
-        icon_file => '/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertCautionIcon.icns',
-     );
+A README file is required for CPAN modules since CPAN extracts the README
+file from a module distribution so that people browsing the archive
+can use it to get an idea of the module's uses. It is usually a good idea
+to provide version information here so that people can decide whether
+fixes for the module are worth downloading.
 
-     $growl->log( level => 'alert', message => "Hello, Again." );
 
-DESCRIPTION
-    This module allows you to pass messages to Growl using Mac::Growl.
+INSTALLATION
 
-METHODS
-    * new(%p)
-        This method takes a hash of parameters. The following options are
-        acceptable.
+To install this module, run the following commands:
 
-        * name ($)
-                The name of the object. Required.
+	perl Build.PL
+	./Build
+	./Build test
+	./Build install
 
-        * min_level ($)
-                The minimum logging level this object will accept. See the
-                Log::Dispatch documentation for more information. Required.
+SUPPORT AND DOCUMENTATION
 
-        * max_level ($)
-                The maximum logging level this obejct will accept. See the
-                Log::Dispatch documentation for more information. This is
-                not required. By default the maximum is the highest possible
-                level (which means functionally that the object has no
-                maximum).
+After installing, you can find documentation for this module with the
+perldoc command.
 
-        * app_name ($)
-                The application name registered to Growl. By default, the
-                package name (= Log::Dispatch::MacGrowl) will be registered.
+    perldoc Log::Dispatch::MacGrowl
 
-        * title ($)
-                The title shown on the notification window. By default, the
-                script name will be displayed.
+You can also look for information at:
 
-        * priority ($)
-                The priority number (range from -2 for low to 2 for high)
-                passed to Growl. By default, 0 (normal) will be passed.
+    RT, CPAN's request tracker
+        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Log-Dispatch-MacGrowl
 
-        * sticky ($)
-                The stickiness (boolean value) passed to Growl. By default,
-                1 (sticky) will be passed.
+    AnnoCPAN, Annotated CPAN documentation
+        http://annocpan.org/dist/Log-Dispatch-MacGrowl
 
-        * icon_file ($)
-                The icon file (.icns) path shown on each notification
-                window. By default, nothing will be passed.
+    CPAN Ratings
+        http://cpanratings.perl.org/d/Log-Dispatch-MacGrowl
 
-    * log_message( message => $ )
-        Sends a message to the appropriate output. Generally this shouldn't
-        be called directly but should be called through the "log()" method
-        (in Log::Dispatch::Output).
+    Search CPAN
+        http://search.cpan.org/dist/Log-Dispatch-MacGrowl
 
-DEPENDENCY
-        Log::Dispatch, Mac::Growl
 
-AUTHOR
-        Ryo Okamoto <ryo at aquahill dot net>
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2007-2008 Ryo Okamoto
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
 
