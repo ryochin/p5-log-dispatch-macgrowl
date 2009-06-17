@@ -1,5 +1,4 @@
-#
-# $Id$
+# 
 
 package Log::Dispatch::MacGrowl;
 
@@ -176,6 +175,10 @@ be called directly but should be called through the C<log()> method
 
 =back
 
+=head1 SEE ALSO
+
+Log::Dispatch::DesktopNotification
+
 =head1 DEPENDENCY
 
 Log::Dispatch, Mac::Growl
@@ -186,7 +189,7 @@ Ryo Okamoto C<< <ryo at aquahill dot net> >>
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2007-2008 Ryo Okamoto, all rights reserved.
+Copyright 2007-2009 Ryo Okamoto, all rights reserved.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
