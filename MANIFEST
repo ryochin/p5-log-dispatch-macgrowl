@@ -1,6 +1,8 @@
 Build.PL
 Changes
 lib/Log/Dispatch/MacGrowl.pm
+lib/Log/Dispatch/MacGrowl/Cocoa.pm
+lib/Log/Dispatch/MacGrowl/Mac.pm
 Makefile.PL
 MANIFEST
 META.yml

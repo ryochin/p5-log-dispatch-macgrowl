@@ -20,6 +20,9 @@ my $builder = Module::Build->new(
 	'Log::Dispatch' => 0,
 	'Mac::Growl' => 0,
     },
+    recommends => {
+	'Cocoa::Growl' => 0.03,
+    },
     add_to_cleanup => [ 'Log-Dispatch-MacGrowl-*' ],
     create_makefile_pl => 'traditional',
 );
