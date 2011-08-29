@@ -10,7 +10,7 @@ use File::Basename ();
 use Params::Validate qw(validate SCALAR BOOLEAN);
 Params::Validate::validation_options( allow_extra => 1 );
 
-$VERSION = '0.02';
+$VERSION = '0.03';
 
 BEGIN {
 	if( eval "use Cocoa::Growl; 1" ){
