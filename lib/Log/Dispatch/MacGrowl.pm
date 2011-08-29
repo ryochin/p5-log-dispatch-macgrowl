@@ -16,6 +16,9 @@ BEGIN {
 	if( eval "use Cocoa::Growl; 1" ){
 		eval q{ use base "Log::Dispatch::MacGrowl::Cocoa" };
 	}
+	elsif( eval "use Growl::Tiny; 1" ){
+		eval q{ use base "Log::Dispatch::MacGrowl::Tiny" };
+	}
 	else{
 		eval q{ use base "Log::Dispatch::MacGrowl::Mac" };
 	}
@@ -74,6 +77,8 @@ sub _init {
 }
 
 sub _notification_name { "New Message" }
+
+sub _set_global { }
 
 1;
 
@@ -174,7 +179,7 @@ Log::Dispatch::DesktopNotification
 
 =head1 DEPENDENCY
 
-Log::Dispatch, Mac::Growl or Cocoa::Growl
+Log::Dispatch, ( Cocoa::Growl | Growl::Tiny | Mac::Growl )
 
 =head1 AUTHOR
 

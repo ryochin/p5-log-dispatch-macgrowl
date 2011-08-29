@@ -3,6 +3,7 @@ Changes
 lib/Log/Dispatch/MacGrowl.pm
 lib/Log/Dispatch/MacGrowl/Cocoa.pm
 lib/Log/Dispatch/MacGrowl/Mac.pm
+lib/Log/Dispatch/MacGrowl/Tiny.pm
 Makefile.PL
 MANIFEST
 META.yml

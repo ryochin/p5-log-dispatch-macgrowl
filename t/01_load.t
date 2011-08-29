@@ -13,6 +13,12 @@ diag( "Testing Log::Dispatch::MacGrowl $Log::Dispatch::MacGrowl::VERSION" );
 if( eval "use Cocoa::Growl; 1" ){
     diag( "we have Cocoa::Growl." );
 }
-else{
+elsif( eval "use Growl::Tiny; 1" ){
+    diag( "we have Growl::Tiny." );
+}
+elsif( eval "use Mac::Growl; 1" ){
     diag( "we have Mac::Growl." );
+}
+else{
+    diag( "we have no growl backend modules. all tests may fail." );
 }

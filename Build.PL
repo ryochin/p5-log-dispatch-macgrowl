@@ -20,6 +20,7 @@ my $builder = Module::Build->new(
 	'Cocoa::Growl' => 0.03,
     },
     recommends => {
+	'Growl::Tiny' => '0.0.2',
 #	'Mac::Growl' => 0,
     },
     add_to_cleanup => [ 'Log-Dispatch-MacGrowl-*' ],
