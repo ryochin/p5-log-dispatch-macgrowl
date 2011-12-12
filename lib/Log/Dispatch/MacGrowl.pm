@@ -78,8 +78,6 @@ sub _init {
 
 sub _notification_name { "New Message" }
 
-sub _set_global { }
-
 1;
 
 __END__
