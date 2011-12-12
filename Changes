@@ -1,5 +1,8 @@
 Revision history for Perl extension Log::Dispatch::MacGrowl.
 
+0.04  Mon Dec 12 16:23:39 2011
+	* fixed a bug with malformed-overrid method.
+
 0.03  Mon Aug 29 10:08:32 2011
 	* supported Growl::Tiny.
 	* changed the default backend module from Mac::Growl to Cocoa::Growl.
