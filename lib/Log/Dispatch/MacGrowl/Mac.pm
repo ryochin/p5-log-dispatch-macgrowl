@@ -28,9 +28,21 @@ sub _set_global {
 
 __END__
 
+=encoding utf-8
+
 =head1 NAME
 
 Log::Dispatch::MacGrowl::Mac - Mac::Growl backend for L::D::MacGrowl
+
+=head1 METHODS
+
+=over 4
+
+=item * log_message(%p)
+
+log message.
+
+=back
 
 =head1 DEPENDENCY
 

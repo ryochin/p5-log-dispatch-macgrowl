@@ -25,9 +25,21 @@ sub log_message {
 
 __END__
 
+=encoding utf-8
+
 =head1 NAME
 
 Log::Dispatch::MacGrowl::Tiny - Growl::Tiny backend for L::D::MacGrowl
+
+=head1 METHODS
+
+=over 4
+
+=item * log_message(%p)
+
+log message.
+
+=back
 
 =head1 DEPENDENCY
 
@@ -39,11 +51,13 @@ http://growl.info/extras.php#growlnotify
 
 =head1 AUTHOR
 
-Ryo Okamoto C<< <ryo at aquahill dot net> >>
+Ryo Okamoto E<lt>ryo@aquahill.netE<gt>
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2007-2011 Ryo Okamoto, all rights reserved.
+Copyright (c) Ryo Okamoto, all rights reserved.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
+
+=cut

@@ -10,6 +10,8 @@ use File::Basename ();
 use Params::Validate qw(validate SCALAR BOOLEAN);
 Params::Validate::validation_options( allow_extra => 1 );
 
+# ABSTRACT: Log messages via Growl
+
 $VERSION = '0.04';
 
 BEGIN {
@@ -81,6 +83,8 @@ sub _notification_name { "New Message" }
 1;
 
 __END__
+
+=encoding utf-8
 
 =head1 NAME
 
@@ -179,14 +183,19 @@ Log::Dispatch::DesktopNotification
 
 Log::Dispatch, ( Cocoa::Growl | Growl::Tiny | Mac::Growl )
 
+=head1 REPOSITORY
+
+https://github.com/ryochin/p5-log-dispatch-macgrowl
+
 =head1 AUTHOR
 
-Ryo Okamoto C<< <ryo at aquahill dot net> >>
+Ryo Okamoto E<lt>ryo@aquahill.netE<gt>
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2007-2010 Ryo Okamoto, all rights reserved.
+Copyright (c) Ryo Okamoto, all rights reserved.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
 
+=cut
